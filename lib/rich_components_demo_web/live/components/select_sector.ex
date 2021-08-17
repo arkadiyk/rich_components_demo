@@ -2,7 +2,7 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
   use Surface.LiveComponent
   alias RichComponentsDemo.Gics
 
-  alias SurfaceRichComponents.Select, as: RichSelect
+  alias SurfaceRichComponents.SearchSelect
 
   prop name, :atom, required: true
 
@@ -15,8 +15,6 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
   def mount(socket) do
     sectors = Gics.list_sector() |> Map.new(&{&1.code, &1})
     industries = Gics.list_industry()
-
-    IO.inspect(["----->>>>> MOUNT"])
 
     socket =
       socket
@@ -35,16 +33,19 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
     {:ok, socket}
   end
 
+  @impl true
   def render(assigns) do
     ~F"""
     <div class="p-28">
-      <RichSelect
+      <SearchSelect
         name={@name}
         filter="filter_sectors"
         select="select_sector"
         outer_class="relative z-0 w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
         focus_class="bg-gray-600 text-red-300"
         >
+
+        {!-- section for Search Input --}
         <:input>
           <input type="search" data-select-input style="box-shadow: none;" class="border-none w-full h-full focus:outline-none">
           <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
@@ -54,6 +55,7 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
           </span>
         </:input>
 
+        {!-- section to display Selected Value --}
         <:selected_value>
           <div data-selected-value>
             {#if is_nil(@selected_industry)}
@@ -64,10 +66,12 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
               <div class="w-full h-full truncate z-3 bg-white p-2 mr-10">
                 {@sectors[@selected_industry.sector_code].name} / {@selected_industry.name}
               </div>
+              <button type="button" data-clear class="absolute mr-8 mt-0 p-3 right-0 top-0 text-lg text-red-700">&times;</button>
             {/if}
           </div>
         </:selected_value>
 
+        {!-- section to display filtered option list --}
         <:dropdown>
           <div class="relative">
             <ul class="absolute list-none z-10 w-full mt-1 bg-white rounded-md shadow-lg py-1 overflow-auto text-base leading-6 rounded-md shadow-xs max-h-60 focus:outline-none sm:text-sm sm:leading-5">
@@ -98,11 +102,12 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
             </ul>
           </div>
         </:dropdown>
-      </RichSelect>
+      </SearchSelect>
     </div>
     """
   end
 
+  @impl true
   def handle_event("filter_sectors", filter, socket) do
     IO.inspect(["+++", filter])
 
@@ -117,6 +122,7 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
     {:noreply, assign(socket, filtered_industries: filtered_industries)}
   end
 
+  @impl true
   def handle_event("select_sector", industry_code, socket) do
     %{industries: industries} = socket.assigns
     industry = Enum.find(industries, &(&1.code == industry_code))

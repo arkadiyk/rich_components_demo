@@ -9,7 +9,7 @@ defmodule RichComponentsDemoWeb.PageLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    data = %FakeForm{}
+    data = %FakeForm{industry_code: "451030", message_text: "<p>Old Message</p>"}
     types = %{industry_code: :string, message_text: :string}
 
     changeset =
