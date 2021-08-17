@@ -66,13 +66,21 @@ defmodule RichComponentsDemo.Gics do
       %{code: "402010", sector_code: "40", name: "Diversified Financial Services"},
       %{code: "402020", sector_code: "40", name: "Consumer Finance"},
       %{code: "402030", sector_code: "40", name: "Capital Markets"},
-      %{code: "402040", sector_code: "40", name: "Mortgage Real Estate Investment Trusts (REITs)"},
+      %{
+        code: "402040",
+        sector_code: "40",
+        name: "Mortgage Real Estate Investment Trusts (REITs)"
+      },
       %{code: "403010", sector_code: "40", name: "Insurance"},
       %{code: "451020", sector_code: "45", name: "IT Services"},
       %{code: "451030", sector_code: "45", name: "Software"},
       %{code: "452010", sector_code: "45", name: "Communications Equipment"},
       %{code: "452020", sector_code: "45", name: "Technology Hardware, Storage & Peripherals"},
-      %{code: "452030", sector_code: "45", name: "Electronic Equipment, Instruments & Components"},
+      %{
+        code: "452030",
+        sector_code: "45",
+        name: "Electronic Equipment, Instruments & Components"
+      },
       %{code: "453010", sector_code: "45", name: "Semiconductors & Semiconductor Equipment"},
       %{code: "501010", sector_code: "50", name: "Diversified Telecommunication Services"},
       %{code: "501020", sector_code: "50", name: "Wireless Telecommunication Services"},
@@ -83,7 +91,11 @@ defmodule RichComponentsDemo.Gics do
       %{code: "551020", sector_code: "55", name: "Gas Utilities"},
       %{code: "551030", sector_code: "55", name: "Multi-Utilities"},
       %{code: "551040", sector_code: "55", name: "Water Utilities"},
-      %{code: "551050", sector_code: "55", name: "Independent Power and Renewable Electricity Producers"},
+      %{
+        code: "551050",
+        sector_code: "55",
+        name: "Independent Power and Renewable Electricity Producers"
+      },
       %{code: "601010", sector_code: "60", name: "Equity Real Estate Investment Trusts (REITs)"},
       %{code: "601020", sector_code: "60", name: "Real Estate Management & Development"}
     ]

@@ -24,16 +24,6 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
   end
 
   @impl true
-  def update(assigns, socket) do
-    IO.inspect(["####", assigns])
-    socket =
-      socket
-      |> assign(assigns)
-
-    {:ok, socket}
-  end
-
-  @impl true
   def render(assigns) do
     ~F"""
     <div class="p-28">
@@ -46,14 +36,14 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
         >
 
         {!-- section for Search Input --}
-        <:input>
+        <:search>
           <input type="search" data-select-input style="box-shadow: none;" class="border-none w-full h-full focus:outline-none">
           <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
               <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-        </:input>
+        </:search>
 
         {!-- section to display Selected Value --}
         <:selected_value>
@@ -109,8 +99,6 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
 
   @impl true
   def handle_event("filter_sectors", filter, socket) do
-    IO.inspect(["+++", filter])
-
     %{industries: industries} = socket.assigns
 
     filtered_industries =

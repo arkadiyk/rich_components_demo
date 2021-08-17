@@ -14,7 +14,10 @@ defmodule RichComponentsDemoWeb.PageLive do
 
     changeset =
       {data, types}
-      |> Ecto.Changeset.cast(%{industry_code: "451030", message_text: ""}, [:industry_code, :message_text])
+      |> Ecto.Changeset.cast(%{industry_code: "451030", message_text: ""}, [
+        :industry_code,
+        :message_text
+      ])
 
     {:ok, assign(socket, changeset: changeset)}
   end
