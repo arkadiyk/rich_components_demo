@@ -48,6 +48,7 @@ defmodule RichComponentsDemo.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:surface, "~> 0.5.1"},
+      {:surface_formatter, "~> 0.5.0", only: :dev},
       {:surface_rich_components, path: "../surface_rich_components"}
     ]
   end

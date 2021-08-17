@@ -33,14 +33,23 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
         select="select_sector"
         outer_class="relative z-0 w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
         focus_class="bg-gray-600 text-red-300"
-        >
-
+      >
         {!-- section for Search Input --}
         <:search>
-          <input type="search" data-select-input style="box-shadow: none;" class="border-none w-full h-full focus:outline-none">
+          <input
+            type="search"
+            data-select-input
+            style="box-shadow: none;"
+            class="border-none w-full h-full focus:outline-none"
+          />
           <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
             <svg class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
-              <path d="M7 7l3-3 3 3m0 6l-3 3-3-3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M7 7l3-3 3 3m0 6l-3 3-3-3"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </span>
         </:search>
@@ -56,7 +65,11 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
               <div class="w-full h-full truncate z-3 bg-white p-2 mr-10">
                 {@sectors[@selected_industry.sector_code].name} / {@selected_industry.name}
               </div>
-              <button type="button" data-clear class="absolute mr-8 mt-0 p-3 right-0 top-0 text-lg text-red-700">&times;</button>
+              <button
+                type="button"
+                data-clear
+                class="absolute mr-8 mt-0 p-3 right-0 top-0 text-lg text-red-700"
+              >&times;</button>
             {/if}
           </div>
         </:selected_value>
@@ -77,7 +90,10 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
                   </div>
                   <ul>
                     {#for industry <- industries}
-                      <li data-select-value={industry.code} class="flex justify-between pl-6 pr-3 py-1 hover:bg-gray-100">
+                      <li
+                        data-select-value={industry.code}
+                        class="flex justify-between pl-6 pr-3 py-1 hover:bg-gray-100"
+                      >
                         <div>
                           {industry.name}
                         </div>

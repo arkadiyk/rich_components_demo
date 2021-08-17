@@ -14,7 +14,6 @@
       opts={autocomplete: "off"}
       class="pb-5 xl:w-1/2 lg:w-2/3 w-3/4 m-auto"
     >
-
       <TextEditor name={:message_text} label="Message" debounce="1000" />
 
       <SelectSector id="select-sector" name={:industry_code} />
@@ -24,10 +23,9 @@
           type="submit"
           class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto sm:text-sm"
         >
-        Save
+          Save
         </button>
       </div>
     </Form>
-
   </div>
 </div>
