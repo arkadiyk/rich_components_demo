@@ -49,7 +49,7 @@ defmodule RichComponentsDemo.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:surface, "~> 0.5.1"},
       {:surface_formatter, "~> 0.5.0", only: :dev},
-      {:surface_rich_components, path: "../surface_rich_components"}
+      {:surface_rich_components, git: "https://github.com/arkadiyk/surface_rich_components.git", branch: "main"}
     ]
   end
 
