@@ -26,7 +26,6 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
   @impl true
   def render(assigns) do
     ~F"""
-    <div class="p-28">
       <SearchSelect
         name={@name}
         filter="filter_sectors"
@@ -109,7 +108,6 @@ defmodule RichComponentsDemoWeb.Components.SelectSector do
           </div>
         </:dropdown>
       </SearchSelect>
-    </div>
     """
   end
 

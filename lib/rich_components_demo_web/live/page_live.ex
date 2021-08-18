@@ -29,11 +29,8 @@ defmodule RichComponentsDemoWeb.PageLive do
         <div class="prose mb-5">
           <h1 class="m-auto">Rich Components Demo</h1>
         </div>
-        <div class="shadow-2xl border-0 p-3">
-          <div class="prose">
-            <h3 class="m-auto">Rich Editor</h3>
-          </div>
 
+        <div class="shadow-2xl border-0 p-3">
           <Form
             for={@changeset}
             submit="save"
@@ -42,11 +39,19 @@ defmodule RichComponentsDemoWeb.PageLive do
             class="pb-5 xl:w-1/2 lg:w-2/3 w-3/4 m-auto"
           >
 
+            <div class="prose mt-7 mb-2">
+              <h3 class="m-auto">Rich Editor</h3>
+            </div>
+
             <TextEditor name={:message_text} label="Message" debounce="1000" />
+
+            <div class="prose mt-7 mb-2">
+              <h3 class="m-auto">Search Select</h3>
+            </div>
 
             <SelectSector id="select-sector" name={:industry_code} />
 
-            <div class="my-5">
+            <div class="my-7">
               <button
                 type="submit"
                 class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:w-auto sm:text-sm"

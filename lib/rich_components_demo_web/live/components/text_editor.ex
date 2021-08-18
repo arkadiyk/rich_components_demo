@@ -11,7 +11,7 @@ defmodule RichComponentsDemoWeb.Components.TextEditor do
   def render(assigns) do
     ~F"""
     <div>
-      <div class="mt-4 mb-1 text-sm text-gray-700 dark:text-gray-400">{@label}</div>
+      <div class="mb-1 text-sm text-gray-700 dark:text-gray-400">{@label}</div>
 
       <div class="border border-gray-300 p-3 pt-2
           w-full mt-1 border-gray-300 rounded-lg shadow-sm bg-white
