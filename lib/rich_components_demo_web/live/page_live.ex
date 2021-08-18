@@ -27,7 +27,8 @@ defmodule RichComponentsDemoWeb.PageLive do
     ~F"""
       <div class="container m-auto p-20">
         <div class="prose mb-5">
-          <h1 class="m-auto">Rich Components Demo</h1>
+          <h1 class="m-auto">Surface UI Rich Components Demo</h1>
+          <p>Collection of <a href="https://github.com/arkadiyk/surface_rich_components">headless JS components</a> for <a href="https://surface-ui.org/">SurfaceUI framework</a></p>
         </div>
 
         <div class="shadow-2xl border-0 p-3">
@@ -60,6 +61,11 @@ defmodule RichComponentsDemoWeb.PageLive do
               </button>
             </div>
           </Form>
+        </div>
+
+        <div class="prose mt-20">
+          <p>Source code of the library: <a href="https://github.com/arkadiyk/surface_rich_components">https://github.com/arkadiyk/surface_rich_components</a></p>
+          <p>Source code of this demo: <a href="https://github.com/arkadiyk/rich_components_demo">https://github.com/arkadiyk/rich_components_demo</a></p>
         </div>
       </div>
     """
