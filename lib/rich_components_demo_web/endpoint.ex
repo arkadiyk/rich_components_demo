@@ -7,12 +7,8 @@ defmodule RichComponentsDemoWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_rich_components_demo_key",
-    signing_salt: "aT7Q1BZH"
+    signing_salt: "/S92inSt"
   ]
-
-  socket "/socket", RichComponentsDemoWeb.UserSocket,
-    websocket: true,
-    longpoll: false
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
@@ -24,7 +20,7 @@ defmodule RichComponentsDemoWeb.Endpoint do
     at: "/",
     from: :rich_components_demo,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

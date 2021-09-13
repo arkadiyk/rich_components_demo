@@ -38,6 +38,7 @@ defmodule RichComponentsDemoWeb.PageLive do
             change="validate"
             opts={autocomplete: "off"}
             class="pb-5 xl:w-1/2 lg:w-2/3 w-3/4 m-auto"
+            phx_auto_recover="recover"
           >
 
             <div class="prose mt-7 mb-2">
