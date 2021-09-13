@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "deploy": "NODE_ENV=production tailwindcss --postcss --minify -i css/app.css -o ../priv/static/assets/app.css"
+    "deploy": "NODE_ENV=production tailwindcss --postcss --minify -i css/app.css -o ../priv/static/assets/app.css  && cd .. && mix assets.deploy && rm -f _build/esbuild"
   },
   "dependencies": {
     "@tiptap/core": "^2.0.0-beta.105",
