@@ -51,7 +51,8 @@ defmodule RichComponentsDemo.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:surface, github: "surface-ui/surface", override: true},
       {:surface_formatter, "~> 0.5.0", only: :dev},
-      {:surface_rich_components, git: "https://github.com/arkadiyk/surface_rich_components.git", branch: "main"}
+      {:surface_rich_components, path: "../surface_rich_components"}
+      # {:surface_rich_components, git: "https://github.com/arkadiyk/surface_rich_components.git", branch: "main"}
     ]
   end
 
